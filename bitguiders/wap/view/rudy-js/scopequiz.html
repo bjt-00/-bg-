@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Javascript Scope Exercises</h1>
+<pre>
+<b>1. Determine what this Javascript code will print out (without running it):</b>
+x = 1;
+var a = 5;
+var b = 10;
+var c = function(a, b, c) {
+var x = 10;
+document.write(x);
+document.write(a);
+var f = function(a, b, c) {
+b = a;
+document.write(b);
+b = c;
+var x = 5;
+}
+f(a,b,c);
+document.write(b);
+}
+c(8,9,10);
+document.write(b);
+document.write(x);
+} 
+<div style="color:green">
+<strong>Answer:</strong>
+10 8 8 9 10 1
+<b>*Note:</b> There will be no space in actual output,
+I have intentionally placed spaces for reading clarity.
+<!-- script type="text/javascript">
+x = 1;
+var a = 5;
+var b = 10;
+var c = function(a, b, c) {
+var x = 10;
+document.write(x);
+document.write(a);
+var f = function(a, b, c) {
+b = a;
+document.write(b);
+b = c;
+var x = 5;
+}
+f(a,b,c);
+document.write(b);
+}
+c(8,9,10);
+document.write(b);
+document.write(x);
+
+</script-->
+</div>
+<b>2. What is the difference between a method and function?</b>
+<div style="color:green">
+<strong>Answer:</strong>
+- A <strong>function</strong> is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters) 
+and can optionally return data (the return value). 
+All data that is passed to a function is explicitly passed.
+
+<b>Example:</b> function a(){...} etc
+
+- A <strong>method</strong> is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
+
+    - A method is implicitly passed the object on which it was called.
+    - A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
+    - JavaScript methods are the actions that can be performed on objects.
+    - A JavaScript method is a property containing a function definition.
+<b>Example:</b> var b = function(){ var g= { c:function(){..},d:function(){..} } ;return g;}; etc
+             b.c(); or b.d(); etc // you can call b now
+</div>
+<b>3. What does 'this' refer to when used in a Java method?</b>
+<div style="color:green">
+<strong>Answer:</strong>
+
+  <strong>Note:</strong> Topic we are studying is Java Script, while question 
+   context is 'Java Method',that seems to be related to Core Java. 
+   Context is confusing, that is why, I wrote both asnwers. What ever you
+   are looking for.
+  <em>Core Java</em>
+- From Core java point of view, 'this' refers Global class variables/methods.
+  In following example constructor of 'A' refers its own global variable 'a=1',
+  Instead of local variable 'a=2'. So, s.o.p output will be '1'.
+  Example: class A{int a=1; A(){int a=2; s.o.p(this.a);}}
+  
+  <em>Java Script Method</em>
+- In javascript 'this' refers the inner most scope, in case of method example given below.
+  this.count refers, inner most value of count '1'. Not the outer count value '0'.
+   
+<b>Example:</b> 
+&lt;script&gt;
+var count=0;
+var b = (function(){ 
+	count=1;
+var testVar= { 
+c:function(){
+ alert(this.count);
+},
+d:this.count
+};
+alert(testVar.d);
+});
+&lt;/script&gt;
+<script type="text/javascript">
+var count1=0;
+var b = (function(){ 
+	count1=1;
+
+var testVar= { 
+c:function(){
+ alert(this.count1);
+},
+d:this.count1
+};
+alert(testVar.d);
+});
+</script>
+<input type="button" onclick="b();" value="Test Java method 'this' ">
+
+</div>
+<b>4. What does 'this' refer to when used in a JavaScript method?</b>
+<div style="color:green">
+<strong>Answer:</strong>
+- 'this' in JavaScript method refers outer most, script level scope.
+   in following given example alert this.count refers, value '0'. Not
+   the internal value '1'.
+
+<b>Example:</b> 
+&lt;script&gt;
+ var count=0;
+var test=function a(){
+var count=1;
+alert(this.count);
+}
+&lt;/script&gt;
+<script type="text/javascript">
+var count2=0;
+var test=function a(){
+var count2=1;
+alert(this.count2);
+}
+</script>
+<input type="button" onclick="test()" value="Test JavaScript method 'this' ">
+</div>
+<b>5. What does 'this' refer to when used in a JavaScript function?</b>
+<div style="color:green">
+<strong>Answer:</strong>
+- 'this' in JavaScript function refers outer most, script level scope.
+   in following given example alert this.count refers, value '0'. Not
+   the internal value '1'.
+
+<b>Example:</b> 
+&lt;script&gt;
+ var count=0;
+function a(){
+var count=1;
+alert(this.count);
+}
+&lt;/script&gt;
+<script type="text/javascript">
+var count3=0;
+function a(){
+var count3=1;
+alert(this.count3);
+}
+</script>
+<input type="button" onclick="test()" value="Test JavaScript function 'this' ">
+</div>
+<b>6. What is a free variable in JavaScript?</b>
+<div style="color:green">
+<strong>Answer:</strong>
+ - Variables defined outside of functions/methods. In above script examples
+ variable 'count' defined outside of function/method is a free variable.
+ - free variable: A variable referred to by a function that is not one of its parameters or local variables. 
+</div>
+<b>7. Create an object that has properties with name = "fred" and major="music" and a property that is a function
+that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+<div style="color:green">
+<strong>Answer:</strong>
+&lt;script&gt;
+var personDetails =function(){
+   var person = {
+      name:"fred",
+      major="music",
+      smallest:function(a,b){return (a&lt;b?a:b);}
+   };
+   return person;
+}
+&lt;/script&gt;
+</div>
+</pre>
+</body>
+</html>

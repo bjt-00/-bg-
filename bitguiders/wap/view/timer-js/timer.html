@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">	
+function booyah1(){
+	alert("BOOYAH!");
+}
+function booyah2(){
+	setTimeout(booyah1, 2000);
+}
+function showMessages(){
+setTimeout(booyah1, 2000);
+setTimeout(booyah2(), 2000);
+}
+function setEvents(){
+	document.getElementById('testButton').onclick=showMessages;
+}
+ window.onload = setEvents;
+
+</script>
+</head>
+<body>
+<h1>Javascript Exercises</h1>
+<ol>
+	<li>
+	<pre><b>What is the difference between the following 2 statements?</b>
+setTimeout(booyah, 2000);
+setTimeout(booyah(), 2000);
+<div style="color:green">
+<strong>Answer:</strong>
+- First booyah will be called after given time 2 sec.
+- Second booyah() method will be call immediately.
+</div>
+</pre>
+</li>
+<li>
+<pre>
+<b>What do the following 2 alerts display (answer without running the code)?</b>
+var myfunc = function(a, x) {
+return a * x;
+};
+var x = myfunc(2, 3);
+var y = myfunc;
+alert(x);
+alert(y(2,3));
+<div style="color:green">
+<strong>Answer:</strong>
+- Both Alert will display 6
+</div>
+</pre>
+</li>
+<li>
+<pre>
+<b>Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that
+says <q>BOOYAH!</q></b>
+setTimeout(booyah1, 2000);
+setTimeout(booyah2(), 2000);
+<div style="color:green">
+<strong>Answer:</strong>
+
+&lt;script type="text/javascript"&gt;	
+function booyah1(){
+	alert("BOOYAH!");
+}
+function booyah2(){
+	setTimeout(booyah1, 2000);
+}
+&lt;script&gt;
+
+	<button id="testButton">Show Alerts</button> 
+</div>
+</pre>
+</li>
+<li>
+<pre>
+<b>What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the reasons
+for using it)?</b>
+<div style="color:green">
+<strong>Answer:</strong>
+- Unobtrusive Javascript: Uses the DOM to attach and execute all JavaScript functions.
+- Idea behind 'Unobtrusive' is to keep script separate from HTML.
+- Common 'obtrusive' example is &lt;button onclick="someMethodCall();"&gt; its not recommended approach.
+- Recommended Unobtrusive approache is 
+&lt; script ...&gt; 
+ var buttonElement = document.getElementById("buttonId");
+ buttonElement.onclick=someMethodCall; 
+&lt;/script&gt;
+</div>
+</pre>
+</li>
+
+</ol>
+</body>
+</html>

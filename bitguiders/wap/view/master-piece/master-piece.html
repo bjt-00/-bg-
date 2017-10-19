@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JS/CSS Master Piece</title>
+<script type="text/javascript" src="jquery-1.8.2.min.js" ></script>
+<script type="text/javascript" src="master-piece.js" ></script>
+<link rel="stylesheet" type="text/css" href="master-piece.css" >
+</head>
+<body>
+<head>
+<H1>JS/CSS Master Piece</H1>
+</head>
+
+<div class="Contents">
+	<div>
+		<strong>Variables and Operators</strong>
+	   <ol>
+	   		<li>writing "use strict"; <br>at the very top of your JS file<br>
+	   		 turns on strict syntax checking: </li>
+	   		<li>
+	   		var a=2,b=3; 
+	   		document.write((a+b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a=2,b=3;
+					document.write((a+b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a=2,b="3"; 
+	   		document.write((a+b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a=2,b="3";
+					document.write((a+b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a=2,b="3"; 
+	   		document.write((a-b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a=2,b="3";
+					document.write((a-b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a="2",b="3"; 
+	   		document.write((a-b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a="2",b="3";
+					document.write((a-b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a="2",b="3"; 
+	   		document.write((a*b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a="2",b="3";
+					document.write((a*b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a="2abc",b="3"; 
+	   		document.write((a*b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a="2abc",b="3";
+					document.write((a*b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a="abc2",b="3"; 
+	   		document.write((a*b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a="abc2",b="3";
+					document.write((a*b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a="2abc",b="3"; 
+	   		document.write((parseInt(a)*b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a="2abc",b="3";
+					document.write((parseInt(a)*b));
+				</script>
+	   		</li>
+	   		<li>
+	   		var a="abc2",b="3"; 
+	   		document.write((parseInt(a)*b));
+	   		<em>Result =</em>
+				<script type="text/javascript">
+					var a="abc2",b="3";
+					document.write((parseInt(a)*b));
+				</script>
+	   		</li>
+	   </ol>
+	</div>
+	<div>
+	<strong>Array Methods</strong>
+		<ol>
+			<li>var a = ["A", "B"]; </li>
+			<li>
+			a.push("C"); 
+			document.write(a);           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = ["A", "B"];   
+				a.push("C");    
+				document.write(a);  
+				</script>
+			</li>
+			<li>
+			a.unshift("C"); 
+			document.write(a);           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = ["A", "B"];   
+				a.unshift("C");    
+				document.write(a);  
+				</script>
+			</li>
+			<li>
+			a.pop(); 
+			document.write(a);           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = ["A", "B"];   
+				a.pop();    
+				document.write(a);  
+				</script>
+			</li>
+			<li>
+			a.shift(); 
+			document.write(a);           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = ["A", "B"];   
+				a.shift();    
+				document.write(a);  
+				</script>
+			</li>
+			<li>var a = ["B", "A"];</li>
+			<li>
+			a.sort(); 
+			document.write(a);           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = ["B", "A"];   
+				a.sort();    
+				document.write(a);  
+				</script>
+			</li>
+			<li>var a = "A B C";</li>
+			<li>
+			a = a.split(" "); 
+			document.write(a);           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = "A B C";   
+				a = a.split(" ");    
+				document.write(a);  
+				</script>
+			</li>
+			<li>var a = s.split(/[ \t]+/);</li>
+			<li>
+			a = a.reverse(); 
+			document.write(a);           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = "A B C";   
+				a=a.split(" ");
+				a = a.reverse();
+				document.write(a);  
+				</script>
+			</li>
+			<li>
+			a = a.join("!"); 
+			document.write(a.toString());           
+			<em>Result = </em>
+				<script type="text/javascript">
+				var a = "A B C";   
+				a=a.split(" ");
+				a = a.join("!");
+				document.write(a.toString());  
+				</script>
+			</li>
+			<li>
+			other methods: concat, slice, sort, splice, toString
+
+			
+			</li>
+		</ol>
+	</div>
+	<div>
+		<strong>DOM Objects</strong>
+		<ol>
+			<li>
+			  var s =screen;<br>
+			  document.write(s.availHeight+" h="+s.height+" w="+s.width);<br>
+			  <em>Result =</em>
+				<script type="text/javascript">
+				var s = screen;
+				document.write(s.availHeight+" h="+s.height+" w="+s.width);
+				</script>
+			</li>
+			<li>
+				var timer = setInterval(start,200);<br>
+				clearInterval(timer);<br>
+				<button id="startCounter">Start</button>
+				<button id="stopCounter">Stop</button>
+				<span id="counter">00:00</span>
+				<script type="text/javascript">
+				var counter=0;
+				 function startCounter(){
+					 $("#counter").text(counter++);
+				 }
+				 var timer=null;
+				 var startNow = function(){ 
+					 timer=setInterval(startCounter,200);
+					 $("#startCounter").hide();
+					 $("#stopCounter").show();
+					 };
+				 var stopNow  = function(){
+					 clearInterval(timer);
+					 $("#stopCounter").hide();
+					 $("#startCounter").show();
+					 };
+				 $("#startCounter").click(startNow);
+				 $("#stopCounter").click(stopNow);
+				 $("#stopCounter").hide();
+				</script>
+			
+			</li>
+			<li>
+			function multiply(a, b) {<br>
+			alert(a * b);<br>
+				}	<br>
+			setTimeout(multiply, 2000, 6, 7);<br>
+			<button id="setTimeout">Test</button>
+			<script type="text/javascript">
+			function delayedMultiply() {
+				  // 6 and 7 are passed to multiply when timer goes off
+				  setTimeout(multiply, 2000, 6, 7);
+				}
+				function multiply(a, b) {
+				  alert(a * b);
+				}			
+			$("#setTimeout").click(delayedMultiply);
+			</script>
+			</li>
+		</ol>
+	</div>
+	<div id="styleDiv">
+		<ol>
+			<li>
+				window.onload = function() {<br>
+				  // do stuff with the DOM<br>
+				}<br>
+				$(document).ready(function() {<br>
+				  // do stuff with the DOM<br>
+				});
+			</li>
+			<li>
+			$("#id").click(function(){}<br>
+			$("#id").css("background-color","orange");<br>
+				<button id="changeStyle">Change Style</button>
+				<button id="revertStyle">Revert Style</button>
+				<script type="text/javascript">
+					$("#changeStyle").click(function(){
+						$("#styleDiv").css("background-color","orange");
+					});
+					$("#revertStyle").click(function(){
+						$("#styleDiv").css("background-color","#ffffff");
+					});
+				</script>
+			</li>
+		</ol>
+	</div>
+	<div>
+		<ol>
+			<li>
+				<script type="text/javascript">
+				
+				</script>
+			</li>
+		</ol>
+	</div>
+	<div>
+		<ol>
+			<li>
+				<script type="text/javascript">
+				
+				</script>
+			</li>
+		</ol>
+	</div>
+	<div>
+		<ol>
+			<li>
+				<script type="text/javascript">
+				
+				</script>
+			</li>
+		</ol>
+	</div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+	<a href="http://validator.w3.org/check/referer"><img src="../../themes/default/images/w3c-html.png" alt="Valid HTML5" /></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../../themes/default/images/w3c-css.png" alt="Valid CSS" /></a>
+<a href="https://webster.cs.washington.edu/jslint/?referer"><img src="https://webster.cs.washington.edu/w3c-js.png" alt="Valid JS"></a>
+</footer>
+
+</body>
+</html>

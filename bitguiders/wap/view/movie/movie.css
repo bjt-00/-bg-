@@ -1,0 +1,115 @@
+
+body{
+	background-image: url("images/background.png");
+	margin:0px;
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size:10px;    
+}
+header{
+	text-align: center;
+	background-image: url("images/bannerbg.png");
+	height:50px;
+}
+nav{
+	color:#696969;
+	padding-left:18px;
+}
+aside{
+	width:300px;
+}
+ins{
+	color:green;
+	text-decoration: none;
+}
+ul{
+	list-style-type: square;
+	color:#696969;
+	list-style-image: url("images/pie_bullet.png");
+}
+#footer{
+	bottom:0px;
+	right:0px;
+	width:100px;
+	opacity:0.5;
+	position:fixed;
+}
+section{
+	border-bottom: 2px solid #808080;
+	margin-top: 15px;
+}
+.Contents{
+	width:800px;
+	overflow:hidden;
+	border:4px solid #696969;
+	border-radius:3%;
+	margin: 0 auto;
+}
+.PageTitle{
+	color:#000040;
+	text-shadow: 2px 4px #c0c0c0;
+	font-size:20pt;
+	text-align: center;
+	font-weight:bold;
+}
+.ContentsHeader{
+	background-image: url("images/rbg.png");
+	height:80px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding-left:3px;
+}
+.ContentsFooter{
+	background-color: #A2B964;
+	height:25px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	width:inherit;
+	margin-bottom: 0px;
+	text-align: center;
+	padding-top:5px;
+}
+
+.SidePanel{
+	width:250px;
+	float:right;
+	background-color: #A2B964;
+	border-top-right-radius: 10px;
+	overflow: hidden;
+	clear:left;
+}
+.SubContents{
+	width:540px;
+	height:833px;
+	margin:5px;
+	overflow: hidden;
+}
+.ContentBox{
+	float:left;
+	width:230px;
+	padding:5px;
+	margin-right:10px;
+	margin-left:10px;
+	clear:right;
+}
+.Box{
+	border-radius: 10px;
+	background-color: #e8dc9b;
+	border:2px solid #808080;
+	width:230px;
+	padding:5px;
+	font-weight:bold;
+}
+
+.Discount{
+	color:red;
+	font-size: 55px;
+	font-weight: bold;
+	vertical-align: middle;
+	position:absolute;
+}
+dl{
+	margin-left:10px;
+}
+dt{
+	font-weight:bold;
+}

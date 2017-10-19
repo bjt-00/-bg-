@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+
+
+body{
+	font-family: verdana;
+	font-size:12px;
+}
+
+.Contents{
+	border:1px solid #e1e1e1;
+	margin:0 auto;
+	overflow:hidden;
+	width:70%;
+}
+.Contents div{
+	float:left;
+	border:1px solid red;
+}
+em{
+	color:orange;
+	font-weight:bold;
+}
+footer{
+	bottom:0px;
+	right:0px;
+	position:fixed;
+}

@@ -1,0 +1,119 @@
+.puzzlepiece {
+	-webkit-transition-property: top, left;
+	-webkit-transition-duration: 1s;
+}
+
+.puzzlepiece1 {
+	background-position: 0 0;
+}
+.puzzlepiece2 {
+	background-position: -100px 0;
+}
+.puzzlepiece3 {
+	background-position: -200px 0;
+}
+.puzzlepiece4 {
+	background-position: -300px 0;
+}
+.puzzlepiece5 {
+	background-position: 0 -100px;
+}
+.puzzlepiece6 {
+	background-position: -100px -100px;
+}
+.puzzlepiece7 {
+	background-position: -200px -100px;
+}
+.puzzlepiece8 {
+	background-position: -300px -100px;
+}
+.puzzlepiece9 {
+	background-position: 0 -200px;
+}
+.puzzlepiece10 {
+	background-position: -100px -200px;
+}
+.puzzlepiece11 {
+	background-position: -200px -200px;
+}
+.puzzlepiece12 {
+	background-position: -300px -200px;
+}
+.puzzlepiece13 {
+	background-position: 0 -300px;
+}
+.puzzlepiece14 {
+	background-position: -100px -300px;
+}
+.puzzlepiece15 {
+	background-position: -200px -300px;
+}
+.puzzlepiece16 {
+	background-position: -300px -300px;
+}
+
+.puzzlepiece[data-piece="1"] {
+	top: 0;
+	left: 0;
+}
+.puzzlepiece[data-piece="2"] {
+	top: 0;
+	left: 100px;
+}
+.puzzlepiece[data-piece="3"] {
+	top: 0;
+	left: 200px;
+}
+.puzzlepiece[data-piece="4"] {
+	top: 0;
+	left: 300px;
+}
+.puzzlepiece[data-piece="5"] {
+	top: 100px;
+	left: 0;
+}
+.puzzlepiece[data-piece="6"] {
+	top: 100px;
+	left: 100px;
+}
+
+.puzzlepiece[data-piece="7"] {
+	top: 100px;
+	left: 200px;
+}
+.puzzlepiece[data-piece="8"] {
+	top: 100px;
+	left: 300px;
+}
+.puzzlepiece[data-piece="9"] {
+	top: 200px;
+	left: 0;
+}
+.puzzlepiece[data-piece="10"] {
+	top: 200px;
+	left: 100px;
+}
+.puzzlepiece[data-piece="11"] {
+	top: 200px;
+	left: 200px;
+}
+.puzzlepiece[data-piece="12"] {
+	top: 200px;
+	left: 300px;
+}
+.puzzlepiece[data-piece="13"] {
+	top: 300px;
+	left: 0;
+}
+.puzzlepiece[data-piece="14"] {
+	top: 300px;
+	left: 100px;
+}
+.puzzlepiece[data-piece="15"] {
+	top: 300px;
+	left: 200px;
+}
+.puzzlepiece[data-piece="16"] {
+	top: 300px;
+	left: 300px;
+}
