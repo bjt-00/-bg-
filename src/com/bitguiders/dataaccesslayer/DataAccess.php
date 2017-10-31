@@ -2,13 +2,12 @@
    class DataAccess{
 
    	
- 
-   	/*
+   
    	public $host = "localhost";
    	public $user ="root";
    	public $password  ="";
    	public $db   ="bitguiders_db";
- */
+ 
    	 function dbConnect(){
    		// initialize parameters
    		

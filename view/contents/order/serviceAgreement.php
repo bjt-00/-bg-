@@ -132,19 +132,24 @@ $pmp = new PMPBackingBean();
 							 $currency =$order->currency;
 							  if($order->work_started==1){
 								 $developmentStatus = $dataAccess->getResult("select * from development_status where order_id=".$orderId);
-								 while($development = mysql_fetch_object($developmentStatus)){
+								 if($developmentStatus!=null){
+								  while($development = mysql_fetch_object($developmentStatus)){
 							 ?>
 								 	
 							 	<?php 
-								 }//while end
+								     }//while end
+								    }//internal if
 							  	  }//if end
 							 	if($order->aggreement_signed==1){
 									 $paymentStatus = $dataAccess->getResult("select * from payment_status where order_id=".$orderId);
-									 while($payment = mysql_fetch_object($paymentStatus)){
+									 if($paymentStatus!=null){
+									   while($payment = mysql_fetch_object($paymentStatus)){
 									 	$totalPaid = ($payment->first_installment_amount+$payment->second_installment_amount+$payment->third_installment_amount);
 									 	$percent = ($totalPaid*100)/$payment->total_amount;
 							 		?>
-				<?php }} ?> 	
+				<?php     }//while end
+				      }//internal if end			 
+					}//if end ?> 	
 			 </fieldset>	
 			
 				</td>

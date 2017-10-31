@@ -8,6 +8,7 @@ include 'dataaccess/QuestionDAO.php';
  }
  else if(isset($_POST["update"])){
  	
+ 	
  			for ($i = 0; $i < count($_POST['optionsList']); $i++)
  			{
  				echo $_POST['optionsList'][$i]."=".$_POST['_optionsList'][$i]."-".$i;

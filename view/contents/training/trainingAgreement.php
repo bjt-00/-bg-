@@ -138,11 +138,14 @@ $pmp = new PMPBackingBean();
 							  	  }//if end
 							 	if($order->aggreement_signed==1){
 									 $paymentStatus = $dataAccess->getResult("select * from payment_status where order_id=".$orderId);
+									if($paymentStatus!=null){
 									 while($payment = mysql_fetch_object($paymentStatus)){
 									 	$totalPaid = ($payment->first_installment_amount+$payment->second_installment_amount+$payment->third_installment_amount);
 									 	$percent = ($totalPaid*100)/$payment->total_amount;
 							 		?>
-				<?php }} ?> 	
+				<?php   }//while
+				      }//if end
+					} ?> 	
 			 </fieldset>	
 			
 				</td>

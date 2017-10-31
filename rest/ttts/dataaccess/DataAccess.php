@@ -1,12 +1,7 @@
  <?php 
    class DataAccess{
 
- /*  	
-   	public $host = "thesuffahorg.netfirmsmysql.com";
-   	public $user ="ttts_user";
-   	public $password  ="<sFIn@16>;";
-   	public $db   ="ttts_db";
-*/
+  	
    	
    	public $host = "localhost";
    	public $user ="root";

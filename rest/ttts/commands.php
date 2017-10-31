@@ -1,6 +1,5 @@
 <u>T T T S :::  V a l i d  &nbsp; C o m m a n d s</u>
-<p>Input Parameters [ s = Service , a = Action ]</p>
-<p>Example: ttts/?s=q&a=list&qbid=2</p>
+<p>Input Parameters [ s = Service , q = Action ]</p>
 
 <fieldset>
 <legend>Services List</legend>

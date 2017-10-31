@@ -115,6 +115,7 @@
 							  	  }//if end
 							 	
 									 $paymentStatus = $dataAccess->getResult("select * from payment_status where order_id=".$orderId);
+									if($paymentStatus!=null){
 									 while($payment = mysql_fetch_object($paymentStatus)){
 									 	$totalPaid = ($payment->first_installment_amount+$payment->second_installment_amount+$payment->third_installment_amount);
 									 	$percent = ($totalPaid*100)/$payment->total_amount;
@@ -150,7 +151,9 @@
 							 		</div>
 							 		<?php }?>
 							 	</div>
-				              <?php } ?> 	
+				              <?php }//while
+								}//if end	
+							 	?> 	
 </div>
 </div>
 <?php if($row->aggreement_signed){ ?>
