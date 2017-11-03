@@ -109,8 +109,7 @@
       <label for="budget">Budget *:</label>
       <input name="budget" type="number" value="<?php echo $budget;?>" min="10" step="10" required class="form-control">
       <select name="currency">
-		<option value="PKR">PKR</option>
-		<option value="$">$</option>
+		<option value="USD">$</option>
 	 </select>
     </div>
 	</div>

@@ -12,7 +12,7 @@
 <tr style="background-image: url('http://www.bitguiders.com/themes/default/images/contents.png'); ">
 	<td style="width:67%;padding:15px;margin-top: 0px" valign="top">
 		
-			<b>السلام عليكم/Peace be upon you!</b>
+			<b>Hi!</b>
 			<br><br>
 			<p>
 			Your order placed successfully.After reviewing your order details, bitguiders representative will get back to you for order confirmation.
@@ -31,7 +31,7 @@
 			<img src="http://www.bitguiders.com/themes/default/images/bitguiders.png" alt="bitguiders" style="width:100px;height:40px;border:0px" />
 			</a>
 			<br>
-			<b>Cel:</b>+92 0301 5421954<br>
+			<b>Cel:</b>+1 (872)-222-3435<br>
 			<b>Email:</b> <a href="mailto:info@bitguiders.com">info@bitguiders.com</a> <br>
 			
 			<a href="http://www.facebook.com/pages/bitguiders/181232348602166"  target="_new">
@@ -131,7 +131,7 @@
 </tr>
 <tr>
 	<td colspan="2" style="background:orange;color:#ffffff;height:15px;font-size:10px;padding-left:10px;"> 
-		bitguiders,Copyright © 2006-14
+		bitguiders,Copyright © 2006-19
 	 </td>
 </tr>
 </table>

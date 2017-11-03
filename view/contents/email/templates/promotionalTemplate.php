@@ -126,7 +126,7 @@
 </tr>
 <tr>
 	<td colspan="2" style="background:orange;color:#ffffff;height:15px;font-size:10px;padding-left:10px;"> 
-		bitguiders,Copyright © 2006-14
+		bitguiders,Copyright © 2006-19
 	 </td>
 </tr>
 </table>

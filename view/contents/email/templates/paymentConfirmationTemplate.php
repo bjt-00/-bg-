@@ -15,25 +15,21 @@
 			<b>Hi!</b>
 			<br><br>
 			<p>
-			Your Training order is placed successfully.
-			Your order code is <b>'<ORDER_NO>'</b>.this code is important.You can check your <a href="http://www.bitguiders.com/orderstatus.php?orderCode=<ORDER_NO>" target="_new">online order status</a> by this code.
+			You are receving this notification because you have initiated a payment transaction of amount <AMOUNT_PAID>,
+			against order code <b>'<ORDER_NO>'</b>. It doesn't mean we have received your payment.
+			As soon we will receive your payment confirmation from PayPal.
+			Your payment status will update in system.You can also check your payment transfer status <a href="http://www.bitguiders.com/orderstatus.php?orderCode=<ORDER_NO>" target="_new">online</a>.
 			<br>
 			<p>
-			Your <b>Next step</b> is to pay Training Price. Please Made Training Course payments by clicking following link.<br>
-			After payment confirmation.A Selected Technology trainer will contact you for study schedule and will share session details with you.
+			 After payment confirmation Your <b>Next step</b> would be according to <a href="http://www.bitguiders.com/orderstatus.php?orderCode=<ORDER_NO>" target="_new">Agreement</a> given online .
 			</p>
 			<br>
-			<b><PAYMENT_LINK></b>
-			
-		
-				<!-- https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=DNB4QB9XHGYJ2&lc=AE&item_name=JEE%20JSP%20and%20Servlets&item_number=BJT%2d01&amount=200%2e00&currency_code=USD&button_subtype=services&no_note=1&no_shipping=1&rm=1&return=https%3a%2f%2fwww%2ebitguiders%2ecom%2ftraining%2ephp%3fpayment%3daccepted&cancel_return=https%3a%2f%2fwww%2ebitguiders%2ecom%2ftraining%2ephp%3fpayment%3dcanceled&bn=PP%2dBuyNowBF%3apayNow%2epng%3aNonHosted
-				-->
 			</p>
 			<br>
 			
 			<fieldset>
 			<legend>Order Code <b><ORDER_NO>'s</b> Details</legend>
-				<ORDER_DETAILS>
+				<PAYMENT_DETAILS>
 			</fieldset>
 			<br>
 			regards,
@@ -65,7 +61,7 @@
 	<p>
 		<b>Training Code:</b>BJT-02<br>
 		<b>Training Format:</b>Online<br>
-		<b>Price:</b>20000 RS<br>
+		<b>Price:</b>200 $<br>
 		<b>Duration:</b>8 Hours [2 Hours daily]</br>
 		<b>Cource Materials:</b>English<p>
 		<b>Language:</b>English/Urdu<br>
@@ -84,7 +80,7 @@
 	<p>
 		<b>Training Code:</b>BJT-02<br>
 		<b>Training Format:</b>Online<br>
-		<b>Price:</b>20000 RS<br>
+		<b>Price:</b>200 $<br>
 		<b>Duration:</b>8 Hours [2 Hours daily]</br>
 		<b>Cource Materials:</b>English<p>
 		<b>Language:</b>English/Urdu<br>
@@ -103,7 +99,7 @@
 	<p>
 		<b>Training Code:</b>BJT-02<br>
 		<b>Training Format:</b>Online<br>
-		<b>Price:</b>20000 RS<br>
+		<b>Price:</b>200 $<br>
 		<b>Duration:</b>8 Hours [2 Hours daily]</br>
 		<b>Cource Materials:</b>English<p>
 		<b>Language:</b>English/Urdu<br>
@@ -122,7 +118,7 @@
 	<p>
 		<b>Training Code:</b>BJT-02<br>
 		<b>Training Format:</b>Online<br>
-		<b>Price:</b>20000 RS<br>
+		<b>Price:</b>200 $<br>
 		<b>Duration:</b>8 Hours [2 Hours daily]</br>
 		<b>Cource Materials:</b>English<p>
 		<b>Language:</b>English/Urdu<br>

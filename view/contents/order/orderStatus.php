@@ -115,9 +115,9 @@
 							 	<table width="100%">
 								    <tr>
 									<td></td>
-									<td>Receiveable</td>
-									<td>Paid</td>
-									<td>Balance</td>
+									<td style="font-size: 8px">TOTAL</td>
+									<td style="font-size: 8px">PAID</td>
+									<td style="font-size: 8px">BALANCE</td>
 									</tr>
 							 		<tr>
 									<td class="Label">1st  25% </td>

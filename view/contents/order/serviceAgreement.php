@@ -1,33 +1,33 @@
 <?php 
 
-$order = new OrderBackingBean();
+$orderBakingBean = new OrderBackingBean();
 $pmp = new PMPBackingBean(); 
 		if(isset($_POST['updateAgreement'])){
 			$pmp->updateAgreement($_POST['projectId']);
 			header("Refresh:0");
 		}
 		else if(isset($_POST['agreementReviewed'])){
-			$order->agreementReviewed($_POST['orderId']);
+			$orderBakingBean->agreementReviewed($_POST['orderId']);
 			header("Refresh:0");
 		}
 		else if(isset($_POST['agreementSigned'])){
-			$order->agreementSigned($_POST['orderId']);
+			$orderBakingBean->agreementSigned($_POST['orderId']);
 			header("Refresh:0");
 		}
 		else if(isset($_POST['agreementReopen'])){
-			$order->agreementReopen($_POST['orderId']);
+			$orderBakingBean->agreementReopen($_POST['orderId']);
 			header("Refresh:0");
 		}
 		else if(isset($_POST['cancelAgreement'])){
-			$order->orderClosed($_POST['orderId']);
+			$orderBakingBean->orderClosed($_POST['orderId']);
 			header("Refresh:0");
 		}
 		else if(isset($_POST['workStarted'])){
-			$order->workStarted($_POST['orderId']);
+			$orderBakingBean->workStarted($_POST['orderId']);
 			header("Refresh:0");
 		}
 		else if(isset($_POST['orderClosed'])){
-			$order->orderClosed($_POST['orderId']);
+			$orderBakingBean->orderClosed($_POST['orderId']);
 			header("Refresh:0");
 		}
 		else if(isset($_POST['createUserStory'])){
@@ -46,7 +46,7 @@ $pmp = new PMPBackingBean();
 ?>
 				<?php 	
                   $orderId=0;	
-				  $result= $order->getOrderStatus();				  
+				  $result= $orderBakingBean->getOrderStatus();				  
 				  if($result!=null){	
 					while($order = mysql_fetch_object($result)){
 						$orderId = $order->order_id;
@@ -230,16 +230,55 @@ according to new agreement. <br>
 							-  After 15-days service, in case of any issue bitguiders will not be responsible. And services will be charged 
 							separately.<br>
 							-  Payment will be made in three installments, with respect of following percentage.<br>
+							<?php 
+							$paymentStatus = $dataAccess->getResult("select * from payment_status where order_id=".$order->order_id);
+							while($payment = mysql_fetch_object($paymentStatus)){
+							  $totalPaid = ($payment->first_installment_amount+$payment->second_installment_amount+$payment->third_installment_amount);
+							  $percent = ($totalPaid*100)/$payment->total_amount;
+							  $orderCode = $order->order_id;
+							?>
 							<table>
 							<tr>
-							<td>- 1st payment (25%) At the time of Agreement  = </td><td><?php echo (($order->budget*25)/100)?></td>
+							<td>- 1st payment (25%) At the time of Agreement  = </td><td>
+								<?php 
+								$amountPayable = (($order->budget*25)/100)-$payment->first_installment_amount;
+								echo (($order->budget*25)/100);
+								if($amountPayable>0){
+									echo $orderBakingBean->getPaymentLink($orderCode,$amountPayable,$order->service,$order->currency);
+								}else{
+									echo " <b style='color:green'>Received</b> ";
+								}
+								?>
+							</td>
 							</tr>
 							<tr>
-							<td>- 2nd payment (25%) On Analysis Completion  = </td><td><?php echo (($order->budget*25)/100)?></td>
+							<td>- 2nd payment (25%) On Analysis Completion  = </td>
+							<td>
+								<?php 
+								$amountPayable = (($order->budget*25)/100)-$payment->second_installment_amount;
+								echo (($order->budget*25)/100);
+								if($amountPayable>0){
+									echo $orderBakingBean->getPaymentLink($orderCode,$amountPayable,$order->service,$order->currency);
+								}else{
+									echo " <b style='color:green'>Received</b> ";
+								}
+								?>
+							</td>
 							</tr>
 							<tr>
-							<td>- 3rd payment (50%) On Implementation Completion  = </td><td><?php echo (($order->budget*50)/100)?></td>
+							<td>- 3rd payment (50%) On Implementation Completion  = </td><td>
+								<?php 
+								$amountPayable = (($order->budget*50)/100)-$payment->third_installment_amount;
+								echo (($order->budget*50)/100);
+								if($amountPayable>0){
+									echo $orderBakingBean->getPaymentLink($orderCode,$amountPayable,$order->service,$order->currency);
+								}else{
+									echo " <b style='color:green'>Received</b> ";
+								}
+								?>
+							</td>
 							</table>
+							<?php }//payment status while end?>
 							<br>
 							- In case of no payment, Next phase will not start, and project end date will also extend, to no of late payment days.<br>
 							I <b><u><i><?php echo $saProject->product_owner; ?></i></u></b> read above document carefully. I agree all of above service requirements, 

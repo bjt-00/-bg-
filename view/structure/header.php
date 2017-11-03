@@ -10,7 +10,7 @@ include"view/structure/menu.php" ;
          <br>
          <br>
          <br>
-<?php if(!isset($_SERVER['Yes']) && !strpos($_SERVER['REQUEST_URI'],'orderstatus.php') && !strpos($_SERVER['REQUEST_URI'],'test.php') && !strpos($_SERVER['REQUEST_URI'],'slideshow.php')&&!strpos($_SERVER['REQUEST_URI'],'pmp.php')&&!strpos($_SERVER['REQUEST_URI'],'training.php')&& !strpos($_SERVER['REQUEST_URI'],'how-to.php')){?>         
+<?php if(!isset($_SERVER['Yes']) && !strpos($_SERVER['REQUEST_URI'],'orderstatus.php') && !strpos($_SERVER['REQUEST_URI'],'test.php') && !strpos($_SERVER['REQUEST_URI'],'slideshow.php')&&!strpos($_SERVER['REQUEST_URI'],'pmp.php')&&!strpos($_SERVER['REQUEST_URI'],'training.php')&& !strpos($_SERVER['REQUEST_URI'],'how-to.php')&& !strpos($_SERVER['REQUEST_URI'],'payment.php')){?>         
 <header id="mainSlider" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
