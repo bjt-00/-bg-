@@ -202,18 +202,26 @@
    	  	$query="insert into pmp_todos values(0,".$_POST['userStoryId'].",'".$_POST['todoName']."' ,'".$_POST['startDate']."','".$_POST['endDate']."' ,'".$_POST['actualStartDate']."','".$_POST['actualEndDate']."','".$_POST['assignedTo']."','".$_POST['issue']."','".$_POST['description']."',".$_POST['developmentStatus'].")";
 		$this->executeQuery($query);
 		$_SESSION['message']=$_POST['todoName'].' is created successfully';
+		$this->updateDevelopmentStatus($todoId);
    	  }
 	   function updateTodo($todoId){
    	  	$query="update pmp_todos set todo_name='".$_POST['todoName']."' ,start_date='".$_POST['startDate']."',end_date='".$_POST['endDate']."' ,actual_start_date='".$_POST['actualStartDate']."',actual_end_date='".$_POST['actualEndDate']."',assigned_to='".$_POST['assignedTo']."',issue='".$_POST['issue']."',description='".$_POST['description']."',development_status=".$_POST['developmentStatus']." where todo_id=".$todoId;
 		$this->executeQuery($query);
-		$_SESSION['message']=$_POST['todoName'].' is updated successfully';
+		$_SESSION['message']=$_POST['todoName'].' is updated successfully ';
+		$this->updateDevelopmentStatus($todoId);
    	  }
 	   function deleteTodo($todoId){
    	  	$query="delete from pmp_todos where todo_id=".$todoId;
 		$this->executeQuery($query);
 		$_SESSION['warning']=$_POST['todoName'].' is deleted successfully';
    	  }
-
+   	  function updateDevelopmentStatus($todoId){
+   	  	$subQuery = "(select order_id from pmp_projects where project_id=( select project_id from pmp_user_stories_status where user_story_id =(select user_story_id from pmp_todos where todo_id=".$todoId.") ))";
+   	  	$query="update development_status set implementation_percent=".$this->getProjectStatusByTodoId($todoId)." where order_id=".$subQuery;
+   	  	$this->executeQuery($query);
+   	  	$_SESSION['message']=$_POST['todoName'].' is updated successfully ';
+   	  }
+   	  
 	  function getUserStoryStatus($userStoryId){
   	  	$query="SELECT (sum(development_status)/count(*)) as status  FROM `pmp_todos` where user_story_id=".$userStoryId;
 		$result = $this->getResult($query);
@@ -237,7 +245,21 @@
 		}	
 			return $projectStatus/$count;									
 	  }
-
+	  function getProjectStatusByTodoId($todoId){
+	  	$projectStatus=0;
+	  	$count=0;
+	  	$subQuery = "( select project_id from pmp_user_stories_status where user_story_id =(select user_story_id from pmp_todos where todo_id=".$todoId.") )";
+	  	$query="SELECT (sum(status)/count(*)) as status  FROM pmp_user_stories_status where project_id=".$subQuery;
+	  	$result = $this->getResult($query);
+	  	if($result!=null){
+	  		while($row = mysql_fetch_object($result)){
+	  			$projectStatus = $projectStatus+$row->status;
+	  			$count++;
+	  		}
+	  	}
+	  	return $projectStatus/$count;
+	  }
+	   
 	  function executeQuery($query){
   	  		$dataAccess = new DataAccess();
    	  		$dataAccess->executeQuery($query);	  
