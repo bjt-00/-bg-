@@ -56,7 +56,7 @@ $titles= array("2006 Gallery","2006 Gallery","2006 Gallery");
 $links = array("http://archives.dailytimes.com.pk/islamabad/07-May-2006/comppec-2006-concludes","#","#");
 $targets= array("_new","_new","_new");
 
-$totalImages =3;
+$totalImages =sizeof($images);
 }
 
 if($gallery =='NASCON 2012'){
@@ -64,14 +64,14 @@ $images = array("nascon_1.jpg","nascon_2.jpg","nascon_3.jpg");
 $titles= array("bitguiders won Web Designing contest at Islamabad,Pakistan","bitguiders won web designing contest at islamabad,Pakistan","bitguiders won web designing contest at islamabad,Pakistan");
 $links = array("#","#","#");
 $targets= array("_self","_self","_self");
-$totalImages =3;
+$totalImages =sizeof($images);
 }
 if($gallery =='Visio Spark 2012'){
 	$images = array("bitguiders_0.png","bitguiders_1.jpg","bitguiders_2.jpg","bitguiders_3.jpg","bitguiders_4.jpg","bitguiders_5.jpg");
 	$titles= array("bitguiders scored 1st Position in Web Designing contest at COMSATS Islamabad","2012 Gallery","2012 Gallery","2012 Gallery","2012 Gallery","2012 Gallery");
 	$links = array("#","#","#","#","#","#");
 	$targets= array("_self","_self","_self","_self","_self","_self");
-	$totalImages =6;
+	$totalImages =sizeof($images);
 }
 
 if($gallery =='ak'){
@@ -79,7 +79,7 @@ $images = array("0.jpg","1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg",
 $titles= array("2009 at Pak Monoment","2011 in Office","2008 Telco Summit","2008 Telecom Summit at Marriott","2011 with Office Team","2011 Islamabad Hotel","April 2012 Pak Monoment Islamabad","April 2011 Islamabad","Office Cafe 2012","Teralight  Team","Jan 2012 Islamabad","April 2012 Lake view Islamabad","April 2012 Lake view Islamabad");
 $links = array("#","#","#","#","#","#","#","#","#","#","#","#");
 $targets= array("_self","_self","_self","_self","_self","_self","_self","_self","_self","_self","_self","_self");
-$totalImages =13;
+$totalImages =sizeof($images);
 }
 
 if($gallery =='PMP 2015'){
@@ -88,8 +88,9 @@ $titles= array("","","","");
 $links = array("#","#","#","#");
 $targets= array("_self","_self","_self","_self");
 
-$totalImages =4;
+$totalImages =sizeof($images);
 }
+
 
 if($gallery =='imtehan'){
 	$images = array("bitguiders_imtehan_0.png","bitguiders_imtehan_1.png","bitguiders_imtehan_2.png","bitguiders_imtehan_3.png","bitguiders_imtehan_4.png","bitguiders_imtehan_5.png","bitguiders_imtehan_6.png");
@@ -97,7 +98,7 @@ if($gallery =='imtehan'){
 	$links = array("#","#","#","#","#","#","#");
 	$targets= array("_self","_self","_self","_self","_self","_self","_self");
 
-	$totalImages =7;
+	$totalImages =sizeof($images);
 }
 
 if($gallery =='thesuffah.org June-2014'){
@@ -105,7 +106,7 @@ $images = array("thesuffah_0.png","thesuffah_1.png","thesuffah_2.png","thesuffah
 $titles= array("thesuffah::: Quran,Hadith & You","","","","","","","","","","");
 $links = array("http://www.thesuffah.org","#","#","#","#","#","#","#","#","#","#");
 $targets= array("_new","_self","_self","_self","_self","_self","_self","_self","_self","_self","_self");
-$totalImages =11;
+$totalImages =sizeof($images);
 }
 
 ?>

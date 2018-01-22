@@ -40,8 +40,8 @@
 				    <li> Define your own Questions and wrtie Programming suntax.</li>
 				    <li> Access Questions defined by others</li>
 				    <li> Execute test on any defined question bundle</li>
-				    <li> <a href="downloads/imtehan.jar">Download Now</a></li>
 				</ul>
+				<a href="downloads/imtehan.jar" class="btn-info">&nbsp;Download Now&nbsp;</a>
 		</div>
 			</div>
 			</div>
@@ -70,7 +70,7 @@
 						    <li> Count occurance of a single character/Verse in Specific section of The Holy Quran</li>
 					    </ul>
 					
-			<a href="http://www.thesuffah.org">Visit now >>> thesuffah.org</a>
+			<a href="http://www.thesuffah.org" target="_new" class="btn-info">&nbsp;Visit Now&nbsp;</a>
 		</div>
 			</div>
 			</div>

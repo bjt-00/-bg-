@@ -14,6 +14,19 @@
 
 <div class="row">
   <div class="col-lg-1" style="width:60px;">
+	  	<span class="EventMonth">15-Jan</span>
+		<span class="EventDay">2018</span>
+  </div>
+  <div class="col-lg-2" style="padding-left:5px;">
+			<div class="EventDescription">
+			  <a href="https://www.youtube.com/watch?v=BQoi-vXG-fE&t=9s" target="_new">The Suffah v 1.1  New feature Released.</a>
+		   </div>
+	</div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-1" style="width:60px;">
 	  	<span class="EventMonth">24-Feb</span>
 		<span class="EventDay">2017</span>
   </div>
@@ -23,6 +36,19 @@
 		   </div>
 	</div>
 </div>
+
+<div class="row">
+  <div class="col-lg-1" style="width:60px;">
+	  	<span class="EventMonth">15-Jan</span>
+		<span class="EventDay">2017</span>
+  </div>
+  <div class="col-lg-2" style="padding-left:5px;">
+			<div class="EventDescription">
+			  <a href="https://www.youtube.com/watch?v=xYEGEHcXcAY&t=36s" target="_new">The Suffah v 1.0  New feature Released.</a>
+		   </div>
+	</div>
+</div>
+
 
 <div class="row">
   <div class="col-lg-1" style="width:60px;">
@@ -43,7 +69,7 @@
   </div>
   <div class="col-lg-2" style="padding-left:5px;">
 			<div class="EventDescription">
-			  <a href="slideshow.php?event=thesuffah.org June-2014">bitguiders launched thesuffah.org</a>
+			  <a href="slideshow.php?event=thesuffah.org June-2014">The Suffah Beta Release Launched thesuffah.org</a>
 		   </div>
 	</div>
 </div>
