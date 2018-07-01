@@ -244,7 +244,7 @@ according to new agreement. <br>
 								$amountPayable = (($order->budget*25)/100)-$payment->first_installment_amount;
 								echo (($order->budget*25)/100);
 								if($amountPayable>0){
-									echo $orderBakingBean->getPaymentLink($orderCode,$amountPayable,$order->service,$order->currency);
+									echo $orderBakingBean->getPaymentLink($orderCode,$amountPayable);
 								}else{
 									echo " <b style='color:green'>Received</b> ";
 								}
@@ -258,7 +258,7 @@ according to new agreement. <br>
 								$amountPayable = (($order->budget*25)/100)-$payment->second_installment_amount;
 								echo (($order->budget*25)/100);
 								if($amountPayable>0){
-									echo $orderBakingBean->getPaymentLink($orderCode,$amountPayable,$order->service,$order->currency);
+									echo $orderBakingBean->getPaymentLink($orderCode,$amountPayable);
 								}else{
 									echo " <b style='color:green'>Received</b> ";
 								}

@@ -1,4 +1,7 @@
- <?php include 'src/com/bitguiders/weblayer/model/mail/EmailTransmitter.php';?>
+ <?php 
+ include 'src/com/bitguiders/weblayer/model/mail/EmailTransmitter.php';
+ include 'src/com/bitguiders/util/Security.php';
+ ?>
 
  
  <?php 
@@ -321,7 +324,7 @@
    	  		$messageTemplate = str_replace("<ORDER_NO>", $orderCode, $messageTemplate);
    	  		$messageTemplate = str_replace("<PAYMENT_DETAILS>", $messageBody, $messageTemplate);
    	  		$messageTemplate = str_replace("<AMOUNT_CANCELED>", $amountCanceled, $messageTemplate);
-   	  		$messageTemplate = str_replace("<PAYMENT_LINK>", $this->getPaymentLink($orderCode,$amountCanceled,$_GET['se'],$_GET['cu']), $messageTemplate);
+   	  		$messageTemplate = str_replace("<PAYMENT_LINK>", $this->getPaymentLink($orderCode,$amountCanceled), $messageTemplate);
    	  		
    	  		$emailTransmitter->mail("info@bitguiders.com",$email,"bitguiders ::: Payment Canceliation against Your order [ Code '".$orderCode."'].", $messageTemplate);
    	  
@@ -330,7 +333,20 @@
    	  	}//catch end
    	  }
    	  
-   	  function getPaymentLink($orderCode,$amount,$service,$currency){
+   	  function getPaymentLink($orderCode,$amount){
+   	  	$result = $this->getOrderDetails($orderCode);
+   	  	
+   	  	while($order = mysql_fetch_object($result)){
+   	  	$service = $order->service;
+   	  	$currency= $order->currency;
+   	  	}
+   	  	
+   	  	$security = new Security();
+   	  	$okCode = ' ۖۚ'.'-'.$orderCode.'-'.$amount;
+   	  	$cancelCode = 'ةُ'.'-'.$orderCode.'-'.$amount;
+   	  	$okCode = $security->encrypt($okCode);
+   	  	$cancelCode = $security->encrypt($cancelCode);
+   	  	
    	  	//https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=DNB4QB9XHGYJ2&lc=AE&item_name=JEE&item_number=BJT-01&amount=200&currency_code=USD&button_subtype=services&no_note=1&no_shipping=1&rm=1&return=https%3a%2f%2fwww%2ebitguiders%2ecom%2ftraining%2ephp%3fpayment%3daccepted&cancel_return=https%3a%2f%2fwww%2ebitguiders%2ecom%2ftraining%2ephp%3fpayment%3dcanceled&bn=PP%2dBuyNowBF%3apayNow%2epng%3aNonHosted
    	  	//$paymentLink = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=DNB4QB9XHGYJ2&lc=AE&item_name='.$_POST['technology'].'&item_number='.$_POST['service'].'&amount='.$_POST['budget'].'%2e00&currency_code=USD&button_subtype=services&no_note=1&no_shipping=1&rm=1&return=https%3a%2f%2fwww%2ebitguiders%2ecom%2forderstatus%2ephp%3fpayment%3daccepted&cancel_return=https%3a%2f%2fwww%2ebitguiders%2ecom%2forderstatus%2ephp%3fpayment%3dcanceled&bn=PP%2dBuyNowBF%3apayNow%2epng%3aNonHosted';
    	  	$amount = trim($amount);
@@ -349,8 +365,8 @@
    	  	.'&cn=Add%20special%20instructions%20to%20the%20seller%3a'
    	  	.'&no_shipping=1'
    	  	.'&rm=1'
-   	  	.'&return=http://www.bitguiders.com/payment.php?s= ۖۚ&orderCode='.$orderCode.'&a='.$amount.
-   	  	'&cancel_return=http://www.bitguiders.com/payment.php?s=ةُ&orderCode='.$orderCode.'&a='.$amount.'&se='.$service.'&cu='.$currency.
+   	  	.'&return=http://www.bitguiders.com/payment.php?s='.$okCode.
+   	  	'&cancel_return=http://www.bitguiders.com/payment.php?s='.$cancelCode.
    	  	'&currency_code='.$currency
    	  	.'&bn=PP%2dDonationsBF%3abug_rollover%2epng%3aNonHosted';
    	  	/*
