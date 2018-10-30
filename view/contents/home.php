@@ -16,10 +16,10 @@
 			</div>
 		</div>											
 		<div class="row">
-		  <div class="col-lg-6">
+		  <div class="col-lg-5">
 			  <?php  include("view/contents/order/orderForm.php"); ?>
 		  </div>
-		  <div class="col-lg-4">
+		  <div class="col-lg-3">
 			<fieldset class="FieldSet">
 			<legend class="Title">
 			<img id="or" alt="" src="themes/default/icons/or.png" alt="OR" height="35" <?php echo (strpos($_SERVER['REQUEST_URI'],'orderstatus.php')?"style='display:none'":''); ?> >
