@@ -5,7 +5,7 @@
    
 <div class="Menu">        
         <!-- Brand and toggle get grouped for better mobile display -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">...</button>
                 <div class="navbar-header Menu">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
