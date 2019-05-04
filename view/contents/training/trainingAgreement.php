@@ -70,9 +70,53 @@ $pmp = new PMPBackingBean();
 					</td>
 				</tr>
 				<tr>
-					<td align="center" class="ServiceAgreement">
-						Service Agreement
+					<td align="center">
+						<span class="ServiceAgreement">Software Requirements</span>
+						<fieldset>
+						<legend class="Title" style="text-align:left"> Your Requirements
+						<input type="button" value="-" title="Hide Panel" style="float:right" id="resizeyourRequirements" onclick="minimize('yourRequirements')">
+
+						<?php if(!$order->aggreement_signed && !$order->work_started && !$order->order_closed){?>
+						<input type="button" value="Create New"  title="Create New Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Create New Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&operation=create')"/>
 						
+						<?php } ?>
+						</legend>
+							<table style="float:left" width="100%" id="yourRequirements">
+							<tr>
+								<td>S.No</td>
+								<td>Requirement</td>
+								<td>Priority</td>
+								<td>Operation</td>
+							</tr>
+						<?php 
+						
+				                                //Display all requirements
+											  	 $user_stories = $pmp->getUserStoriesList($saProject->project_id);
+											  	 
+											  	 if($user_stories!=null){
+												 $seraialNo=1;
+											  	 	while($user_story = mysql_fetch_object($user_stories)){
+													  	 		?>
+													  	 		<tr>
+													  	 		<td class="Label" valign="top"><?php echo $seraialNo++; ?></td>
+													  	 		<td>
+													  	 		<span class='Label'><?php echo $user_story->user_story;?> : </span>
+																<?php echo $user_story->description;?>
+													  	 		</td>
+																<td><?php echo $user_story->priority;?></td>
+																<td>
+																<?php if(!$order->aggreement_signed && !$order->work_started && !$order->order_closed){?>
+																	<input type="button" value="X"  title="Delete Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Delete Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&userStory=<?php echo $user_story->user_story;?>&description=<?php echo $user_story->description;?>&operation=delete')"/>
+																	<input type="button" value="Edit"  title="Edit Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Create New Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&userStory=<?php echo $user_story->user_story;?>&description=<?php echo $user_story->description;?>&operation=update')"/>
+																	<?php }?>
+																</td>
+													  	 		</tr>
+													  	 	<?php }//user story while
+															}//end if
+															
+															  ?>	
+							</table>
+						</fieldset>
 					</td>
 				</tr>
 				<tr>

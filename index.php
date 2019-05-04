@@ -1,3 +1,24 @@
+<!-- http to https converter -->
+<?php 
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+if($protocol=="http://"){
+    $protocol="https://";
+    
+$uri = $_SERVER['REQUEST_URI'];
+//echo ' 1>> '.$uri; // Outputs: URI
+
+
+$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+//echo ' 2>> '.$url; // Outputs: Full URL
+
+$query = $_SERVER['QUERY_STRING'];
+//echo ' 3>> '.$query; // Outputs: Query String
+header('Location: '.$url);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>

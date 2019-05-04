@@ -4,7 +4,12 @@ include 'dataaccess/QuestionDAO.php';
  $dao = new QuestionDAO();
  
  if(isset($_POST["save"])){
- 	echo $dao->add($_POST["questionBundleId"],$_POST["question"],$_POST["type"],$_POST["options"]);
+ 	//echo $dao->add($_POST["questionBundleId"],$_POST["question"],$_POST["type"],$_POST["options"]);
+     for ($i = 0; $i < count($_POST['optionsList']); $i++)
+ 	{
+ 	    echo $i.'>> '.$_POST['optionsList'][$i]."  = ".$_POST['_optionsList'][$i].' ';
+ 	}
+ 	
  }
  else if(isset($_POST["update"])){
  	
@@ -30,12 +35,12 @@ include 'dataaccess/QuestionDAO.php';
 		else if($_GET["a"]=="select" && isset($_GET["id"])){
 			echo $dao->getById($_GET["id"]);
 		}
-		else if($_GET["a"]=="add"  && isset($_GET["data"])){
+		/* else if($_GET["a"]=="add"  && isset($_GET["data"])){
 			echo $dao->add($_GET["data"]);
 		}
 		else if($_POST["a"]=="add"){
 			echo $dao->add($_POST["data"]);
-		}
+		} */
 		else if($_GET["a"]=="update" && isset($_GET["id"])&& isset($_GET["data"])){
 			echo $dao->update($_GET["id"],$_GET["data"]);
 		}

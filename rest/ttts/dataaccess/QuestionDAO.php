@@ -45,7 +45,7 @@ class QuestionDAO {//implements GenericDAO {
 	
 	}
 	function  add($questionBundleId,$question,$type,$options){
-	
+	       $message='';
 		try{
 			$parser = new QuestionParser();
 			$data = "(questionId,questionBundleId,question,type,options)"
@@ -54,13 +54,14 @@ class QuestionDAO {//implements GenericDAO {
 			$query="insert into ".$this->tableName.$data;
 			$id = $this->executeQuery($query);
 			
+			$message = $query;
 			//update question bundle total count
 			//$query = "update question_undle set totalQuestions =(SELECT count(*) FROM question WHERE questionBundleId =(select questionBundleId from question where questionId=".$id."))";
 			//$this->executeQuery($query);
 		}catch (exception $e){
 			return $e->getMessage();
 		}
-		return "Question Saved Successfully";
+		return "-Question Saved Successfully ".$message;
 	}
 	function   update($questionId,$question,$type,$options){
 			try{

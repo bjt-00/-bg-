@@ -24,7 +24,7 @@
 		  <div class="col-lg-12">
 			<span class="PageTitle">User Story Status</span>
 				<div class="Title">
-				 &nbsp; <input type="button" value="Create New"  title="Create TODO" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Add TODO','view/contents/pmp/todoForm.php?userStoryId=<?php echo (isset($_GET['us'])?$_GET['us']:0) ?>&userStory=<?php echo $user_story->user_story;?>&operation=create')"/>
+				 &nbsp; <input type="button" value="Create New"  title="Create TODO" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Add TODO','view/contents/pmp/todoForm.php?userStoryId=<?php echo (isset($_GET['us'])?$_GET['us']:0) ?>&userStory=<?php echo $user_story->user_story;?>&projectId=<?php echo $user_story->project_id;?>&operation=create')"/>
 				</div>
 				<br>
 			</div>

@@ -1,12 +1,14 @@
 
-<?php $order = new OrderBackingBean();
+<?php 
+$order = new OrderBackingBean();
+$pmp = new PMPBackingBean();
 		if(isset($_POST['updateTodo'])){
 			$pmp->updateTodo($_POST['todoId']);
-			header("Refresh:0");
+			//header("Refresh:0");
 		}
 		else if(isset($_POST['deleteTodo'])){
 			$pmp->deleteTodo($_POST['todoId']);
-			header("Refresh:0");
+			//header("Refresh:0");
 		}
 ?>
 
@@ -17,7 +19,7 @@
 					$node =0;
 					$loc =0;
 					$todoId = $_GET['td'];	
-								  	$pmp = new PMPBackingBean();
+								  	
 
 								  	if(isset($_POST['todoStatus'])){
 								  		$pmp->updateTodo($todoId, $_POST['todoStatus']);

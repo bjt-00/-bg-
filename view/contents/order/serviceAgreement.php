@@ -57,6 +57,7 @@ $pmp = new PMPBackingBean();
 						}
 
 				?>
+
 <form method="post">
 <?php include 'view/structure/alert.php';?>
 			<table  cellpadding="0" cellspacing="0" width="100%">
@@ -156,8 +157,9 @@ $pmp = new PMPBackingBean();
 				</tr>
 				<tr>
 					<td align="center">
-					  
+					 
 						<span class="ServiceAgreement">Software Requirements</span>
+						 <!-- User Stories -->
 						<fieldset>
 						<legend class="Title" style="text-align:left"> Your Requirements
 						<input type="button" value="-" title="Hide Panel" style="float:right" id="resizeyourRequirements" onclick="minimize('yourRequirements')">
@@ -167,41 +169,46 @@ $pmp = new PMPBackingBean();
 						
 						<?php } ?>
 						</legend>
-							<table style="float:left" width="100%" id="yourRequirements">
-							<tr>
-								<td>S.No</td>
-								<td>Requirement</td>
-								<td>Priority</td>
-								<td>Operation</td>
-							</tr>
-						<?php 
+						
+						
+							 <div class="panel-group" id="accordion">
+							<?php 
 						
 				                                //Display all requirements
 											  	 $user_stories = $pmp->getUserStoriesList($saProject->project_id);
 											  	 
 											  	 if($user_stories!=null){
-												 $seraialNo=1;
+												 $seraialNo=0;
 											  	 	while($user_story = mysql_fetch_object($user_stories)){
-													  	 		?>
-													  	 		<tr>
-													  	 		<td class="Label" valign="top"><?php echo $seraialNo++; ?></td>
-													  	 		<td>
-													  	 		<span class='Label'><?php echo $user_story->user_story;?> : </span>
-																<?php echo $user_story->description;?>
-													  	 		</td>
-																<td><?php echo $user_story->priority;?></td>
-																<td>
-																<?php if(!$order->aggreement_signed && !$order->work_started && !$order->order_closed){?>
-																	<input type="button" value="X"  title="Delete Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Delete Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&userStory=<?php echo $user_story->user_story;?>&description=<?php echo $user_story->description;?>&operation=delete')"/>
-																	<input type="button" value="Edit"  title="Edit Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Create New Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&userStory=<?php echo $user_story->user_story;?>&description=<?php echo $user_story->description;?>&operation=update')"/>
-																	<?php }?>
-																</td>
-													  	 		</tr>
-													  	 	<?php }//user story while
-															}//end if
-															
-															  ?>	
-							</table>
+											  	 	    $seraialNo++;
+							?>
+                                  <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#javaCollapse-<?php echo $seraialNo; ?>" class="pull-left">
+                                        <?php echo $seraialNo; ?>: 
+                                        <?php echo $user_story->user_story;?>
+                                         [<?php echo $user_story->priority;?>]
+                                        </a><br>
+                                      </h4>
+                                    </div>
+                                    <div id="javaCollapse-<?php echo $seraialNo; ?>" class="panel-collapse collapse">
+                                      <div class="panel-body ">
+                                				<textarea rows="8" readonly=true style="border:0px;background: transparent;width:100%"><?php echo $user_story->description;?></textarea>
+                                      </div>
+                                      <div class="panel-footer">
+ 											<?php if(!$order->aggreement_signed && !$order->work_started && !$order->order_closed){?>
+													<input type="button" value="X"  title="Delete Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Delete Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&operation=delete')"/>
+													<input type="button" value="Edit"  title="Edit Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Create New Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&operation=update')"/>
+											<?php }?>
+                                      	<br>
+                                      </div>
+                                    </div>
+                                  </div>
+							<?php }//user story while
+									}//end if
+							 ?>	
+							 </div> 
 						</fieldset>
 					</td>
 				</tr>
@@ -340,4 +347,26 @@ according to new agreement. <br>
 				  }//if end
 		?>				
 		
+<!-- div ng-app="myApp" ng-controller="customersCtrl"> 
+<ol>
+<li ng-repeat="x in myData">
+
+	{{x.CASESNO}} - {{x.LOCATION}}
+</li>
+</ol>
+</div>	
+	<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+
+  $scope.searchText = 'Allah';
+  //var url = "http://localhost/oc65/rest/case/index.php?s=case&search="+$scope.searchText;
+  var url = "http://localhost/oc65/rest/case/index.php?s=case";
+  //var url = "https://www.thesuffah.org/rest/quran/index.php?s=quran&search="+$scope.searchText;
+  $http.get(url).then(function (response) {
+      $scope.myData = response.data;
+  });
+ 
+});
+</script-->
 		

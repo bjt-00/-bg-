@@ -93,14 +93,12 @@
    		}
    	}
    	function signOut(){
-   		session_start();
+   		//session_start();
    		unset($_SESSION['DataAccess']);
    		unset($_SESSION['email']);
    		unset($_SESSION['userId']);
    		session_destroy();
-   		header("location:index.php");
-   		//
-   		//
+   		//header("location:index.php");
    	}
    	function setUser($userId){
    	  	$this->userId = $userId;

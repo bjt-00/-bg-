@@ -22,6 +22,7 @@
 	<script type="text/javascript" src="scripts/bitguiders.js"></script>
 	<script type="text/javascript" src="view/visitor/visitor.js"></script>	
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	
 	
 	  <!--pop up-->

@@ -6,6 +6,7 @@
 				<tr>
 					<td class="Label">TODO Item</td>
 					<td colspan="3">
+						<input type="hidden" name="projectId" value="<?php echo (isset($_GET['projectId'])?$_GET['projectId']:'') ;?>">
 						<input type="hidden" name="userStoryId" value="<?php echo (isset($_GET['userStoryId'])?$_GET['userStoryId']:'') ;?>">
 						<input type="hidden" name="todoId" value="<?php echo (isset($_GET['todoId'])?$_GET['todoId']:'') ;?>">
 						<input type="text" name="todoName" value="<?php echo (isset($_GET["todoName"])?$_GET["todoName"]:'') ;?>" style="width:80%">
