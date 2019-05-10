@@ -14,7 +14,7 @@
 		<div class="Body">
 		
 		<br>
-		      <div class="col-lg-2">
+		      <div class="col-lg-3">
 		      
 		      <?php 
 		      if(isset($_SESSION['email'])){
@@ -31,7 +31,7 @@
 		      }
 		      ?>
 			   </div>
-		   	   <div class="col-lg-10">
+		   	   <div class="col-lg-9">
 		   	     <?php if(isset($_SESSION['email'])|| isset($_GET['orderCode'])){?>
 			     <?php include"view/contents/pmp/pmp.php" ;?>
 			     <?php }?>

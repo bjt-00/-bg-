@@ -35,7 +35,7 @@
 													$userStoryStatus = $pmp->getUserStoryStatus($user_story->user_story_id);
 													  	 		?>
 													  	 		 <div class="row">
-													  	 		<div class="col-lg-10">
+													  	 		<div class="col-lg-10" style="color:<?php echo ($user_story->priority=='LOW'?'grey':($user_story->priority=='MEDIUM'?'orange':'red'));?>">
 													  	 		<?php echo $user_story->user_story;?>
 																
 													  	 		</div>

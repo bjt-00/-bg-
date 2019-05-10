@@ -114,8 +114,12 @@ $pmp = new PMPBackingBean();
 				 			<td><?php echo ($order!=null?$order->email:''); ?></td>
 				 		</tr>
 				 		<tr>
-				 			<td class="Label">Description</td>
-				 			<td valign="top" colspan="3"><?php echo ($order!=null?$order->description:''); ?></td>
+				 			<td class="Label" style="vertical-align:top">Description</td>
+				 			<td valign="top" colspan="3">
+				 			<textarea rows="8" readonly=true class="form-control" style="border:0px;background: transparent;width:100%">
+				 			  <?php echo ($order!=null?$order->description:''); ?>
+				 			</textarea>
+				 			</td>
 				 		</tr>
 				 		<?php if($user->isAdmin()){?>
 				 		<tr>
@@ -182,10 +186,10 @@ $pmp = new PMPBackingBean();
 											  	 	while($user_story = mysql_fetch_object($user_stories)){
 											  	 	    $seraialNo++;
 							?>
-                                  <div class="panel panel-default">
+                                  <div class="panel panel-default" >
                                     <div class="panel-heading">
                                       <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#javaCollapse-<?php echo $seraialNo; ?>" class="pull-left">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#javaCollapse-<?php echo $seraialNo; ?>" class="pull-left" style="color:<?php echo ($user_story->priority=='LOW'?'grey':($user_story->priority=='MEDIUM'?'orange':'red'));?>">
                                         <?php echo $seraialNo; ?>: 
                                         <?php echo $user_story->user_story;?>
                                          [<?php echo $user_story->priority;?>]
@@ -194,11 +198,11 @@ $pmp = new PMPBackingBean();
                                     </div>
                                     <div id="javaCollapse-<?php echo $seraialNo; ?>" class="panel-collapse collapse">
                                       <div class="panel-body ">
-                                				<textarea rows="8" readonly=true style="border:0px;background: transparent;width:100%"><?php echo $user_story->description;?></textarea>
+                                				<textarea rows="8" readonly=true class="form-control" style="border:0px;background: transparent;width:80%"><?php echo $user_story->description;?></textarea>
                                       </div>
                                       <div class="panel-footer">
  											<?php if(!$order->aggreement_signed && !$order->work_started && !$order->order_closed){?>
-													<input type="button" value="X"  title="Delete Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Delete Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&operation=delete')"/>
+													<input type="button" value="Delete"  title="Delete Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Delete Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&operation=delete')"/>
 													<input type="button" value="Edit"  title="Edit Requirement" style="float:right" data-toggle="modal" data-target="#myModal" onclick="showPopUp('Create New Requirement','view/contents/pmp/userStoryForm.php?projectId=<?php echo $saProject->project_id; ?>&userStoryId=<?php echo $user_story->user_story_id;?>&operation=update')"/>
 											<?php }?>
                                       	<br>
@@ -341,12 +345,12 @@ according to new agreement. <br>
 				</tr>
 				
 			</table>
-			</form>
+			
 		<?php 
 				}//while end
 				  }//if end
 		?>				
-		
+	</form>	
 <!-- div ng-app="myApp" ng-controller="customersCtrl"> 
 <ol>
 <li ng-repeat="x in myData">

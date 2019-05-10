@@ -14,7 +14,7 @@
 		<div class="Body">
 		
 		<br>
-		      <div class="col-lg-2">
+		      <div class="col-lg-3">
 		      
 		      <?php 
 		      if(isset($_SESSION['userId'])){
@@ -33,7 +33,7 @@
 		      }
 		      ?>
 			   </div>
-		   	   <div class="col-lg-10">
+		   	   <div class="col-lg-9">
 		   	     <?php
 		   	      if(isset($_SESSION['userId'])){
 		   	      	if($user->isTrainee()|| isset($_GET['ot'])){

@@ -45,7 +45,7 @@
 														   $userStoryStatus =($userStoryStatus!=null?$userStoryStatus:0);
 													  	 		?>
 													  	 		<div class="row">
-													  	 		<div class="col-lg-10">
+													  	 		<div class="col-lg-10" style="color:<?php echo ($user_story->priority=='LOW'?'grey':($user_story->priority=='MEDIUM'?'orange':'red'));?>" title="<?php echo $user_story->priority;?>">
 													  	 		<?php echo ++$serialNo.' : '.$user_story->user_story;?>
 													  	 		</div>
 													  	 		<div class="col-lg-2">
