@@ -1,4 +1,6 @@
- 
+ <?php 
+ //include 'src/com/bitguiders/util/FileHandler.php';
+ ?>
  <?php 
  global  $action;
    class PMPBackingBean{
@@ -183,24 +185,32 @@
    	  	return $this->getResult($query);
    	  }
 	   function createUserStory($projectId){
-	    
+	       $fileName='';
+	       //$file = new FileHandler();
 	       if(isset($_FILES['attachement'])){
-	           $file = new File();
-	           $file->upload();
+	           //$file->upload();
+	           $fileName=$_FILES['attachement']['name'];
 	       }
 	    
-	       $query="insert into pmp_user_stories values(0,".$projectId.",'".$_POST['priority']."' ,'".$_POST['userStory']."','".$_POST['description']."' ,'".$file->getFileName()."')";
+	       $query="insert into pmp_user_stories values(0,".$projectId.",'".$_POST['priority']."' ,'".$_POST['userStory']."','".$_POST['description']."' ,'".$fileName."')";
 		$this->executeQuery($query);
+		
+		$subQuery = "(select user_story_id from pmp_user_stories where project_id=".$projectId." and priority='".$_POST['priority']."'  and user_story='".$_POST['userStory']."' and description='".$_POST['description']."')";
+		$query="insert into pmp_todos values(0,".$subQuery.",'".$_POST['userStory']."' ,current_timestamp,current_timestamp,current_timestamp,current_timestamp,'','','".$_POST['description']."',0)";
+		$this->executeQuery($query);
+		
 		$_SESSION['message']=$_POST['userStory'].' is created successfully';
    	  }
 	   function updateUserStory($userStoryId){
 	       
-	       $file = new File();
+	       $fileName='';
+	       $file = new FileHandler();
 	       if(isset($_FILES['attachement'])){
 	           $file->upload();
+	           $fileName=$_FILES['attachement']['name'];
 	       }
 	       
-   	  	$query="update pmp_user_stories set priority='".$_POST['priority']."' , user_story='".$_POST['userStory']."',description='".$_POST['description']."' ,attachement_path='".$file->getFileName()."' where user_story_id=".$userStoryId;
+	       $query="update pmp_user_stories set priority='".$_POST['priority']."' , user_story='".$_POST['userStory']."',description='".$_POST['description']."' ,attachement_path='".$fileName."' where user_story_id=".$userStoryId;
 		$this->executeQuery($query);
 		$_SESSION['message']=$_POST['userStory'].' is updated successfully';
    	  }
