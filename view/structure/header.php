@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+//session_start(); 
 include 'src/com/bitguiders/businesslayer/ServiceController.php';
 include"view/structure/menu.php" ;
  ?>

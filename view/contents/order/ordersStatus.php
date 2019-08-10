@@ -1,5 +1,5 @@
 <?php 
-//$order = new OrderBackingBean();
+$order = new OrderBackingBean();
 $pmp = new PMPBackingBean();
 
 if(isset($_POST['UpdateOrderPayment'])){

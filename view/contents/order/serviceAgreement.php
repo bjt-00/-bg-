@@ -85,8 +85,8 @@ $pmp = new PMPBackingBean();
 				 <legend class="Title" >Order Details
 				 <input type="button" value="-" title="Hide Panel" style="float:right" id="resizeorderDetails" onclick="minimize('orderDetails')">
 				 </legend>
-				 
-					 	<table width="100%" id="orderDetails">
+				   <div class="row" id="orderDetails">
+					 	<table width="100%" >
 				 		<tr>
 				 			<td class="Label">Order Code</td>
 				 			<td><?php echo ($order!=null?$order->order_id:''); ?></td>
@@ -132,7 +132,7 @@ $pmp = new PMPBackingBean();
 				 		</tr>
 				 		<?php }?>
 				 		</table>
-	
+						</div>
 							 <?php $budget = $order->budget;
 							 $currency =$order->currency;
 							  if($order->work_started==1){
@@ -175,7 +175,7 @@ $pmp = new PMPBackingBean();
 						</legend>
 						
 						
-							 <div class="panel-group" id="accordion">
+							 <div class="panel-group" id="yourRequirements">
 							<?php 
 						
 				                                //Display all requirements
@@ -189,7 +189,7 @@ $pmp = new PMPBackingBean();
                                   <div class="panel panel-default" >
                                     <div class="panel-heading">
                                       <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#javaCollapse-<?php echo $seraialNo; ?>" class="pull-left" style="color:<?php echo ($user_story->priority=='LOW'?'grey':($user_story->priority=='MEDIUM'?'orange':'red'));?>">
+                                        <a data-toggle="collapse" data-parent="#yourRequirements" href="#javaCollapse-<?php echo $seraialNo; ?>" class="pull-left" style="color:<?php echo ($user_story->priority=='LOW'?'grey':($user_story->priority=='MEDIUM'?'orange':'red'));?>">
                                         <?php echo $seraialNo; ?>: 
                                         <?php echo $user_story->user_story;?>
                                          [<?php echo $user_story->priority;?>]

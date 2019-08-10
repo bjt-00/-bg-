@@ -28,10 +28,10 @@
 	  $order = unserialize($_SESSION['OrderBackingBean']);
   }
 
-/*   if(isset($_SESSION['userId'])){
+   if(isset($_SESSION['userId'])){
   	$user->setUser($_SESSION['userId']);
   }
- */  
+  
   
   
   if(isset($_POST['signIn'])){
