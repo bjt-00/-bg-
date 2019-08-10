@@ -1,5 +1,4 @@
 <?php 
-
 include '../../../src/com/bitguiders/dataaccesslayer/DataAccess.php';
 include '../../../src/com/bitguiders/weblayer/model/pmp/PMPBackingBean.php';
 
@@ -9,7 +8,7 @@ $pmp = new PMPBackingBean();
  $userStory='';
  $priority='LOW';
  $description='';
- 
+ $attachement='';
  if($userStoryId!=''){
      $userStoryResult = $pmp->getUserStoryById($userStoryId);
      
@@ -17,10 +16,11 @@ $pmp = new PMPBackingBean();
          $priority=$user_story->priority;
          $description=$user_story->description;
          $userStory=$user_story->user_story;
+         $attachement=$user_story->attachement_path;
      }
  }
 ?>
-	<form method="post">
+	<form method="post" enctype="multipart/form-data">
 
 			<div id="popUpContentsDiv" style='overflow-y:scroll;height:200px;'>
 					
@@ -52,7 +52,9 @@ $pmp = new PMPBackingBean();
 				<tr>
 					<td class="Label">Attachment</td>
 					<td>
-					<input type="file" name="attachementPath" />
+					<input type="file" name="attachement" />
+					<a href="<?php echo $attachement;?>"><?php echo $attachement;?></a>
+					
 					</td>
 				</tr>
 				</table>

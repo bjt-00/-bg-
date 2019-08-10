@@ -1,6 +1,5 @@
  
  <?php 
- 
  global  $action;
    class PMPBackingBean{
    	// = "index.php?action=home";
@@ -184,12 +183,24 @@
    	  	return $this->getResult($query);
    	  }
 	   function createUserStory($projectId){
-   	  	$query="insert into pmp_user_stories values(0,".$projectId.",'".$_POST['priority']."' ,'".$_POST['userStory']."','".$_POST['description']."' ,'".$_POST['attachementPath']."')";
+	    
+	       if(isset($_FILES['attachement'])){
+	           $file = new File();
+	           $file->upload();
+	       }
+	    
+	       $query="insert into pmp_user_stories values(0,".$projectId.",'".$_POST['priority']."' ,'".$_POST['userStory']."','".$_POST['description']."' ,'".$file->getFileName()."')";
 		$this->executeQuery($query);
 		$_SESSION['message']=$_POST['userStory'].' is created successfully';
    	  }
 	   function updateUserStory($userStoryId){
-   	  	$query="update pmp_user_stories set priority='".$_POST['priority']."' , user_story='".$_POST['userStory']."',description='".$_POST['description']."' ,attachement_path='".$_POST['attachementPath']."' where user_story_id=".$userStoryId;
+	       
+	       $file = new File();
+	       if(isset($_FILES['attachement'])){
+	           $file->upload();
+	       }
+	       
+   	  	$query="update pmp_user_stories set priority='".$_POST['priority']."' , user_story='".$_POST['userStory']."',description='".$_POST['description']."' ,attachement_path='".$file->getFileName()."' where user_story_id=".$userStoryId;
 		$this->executeQuery($query);
 		$_SESSION['message']=$_POST['userStory'].' is updated successfully';
    	  }

@@ -199,6 +199,8 @@ $pmp = new PMPBackingBean();
                                     <div id="javaCollapse-<?php echo $seraialNo; ?>" class="panel-collapse collapse">
                                       <div class="panel-body ">
                                 				<textarea rows="8" readonly=true class="form-control" style="border:0px;background: transparent;width:80%"><?php echo $user_story->description;?></textarea>
+                                				<br>
+                                				<a href="/attachements/<?php echo $user_story->attachement_path;?>" target="new"><?php echo $user_story->attachement_path;?></a>
                                       </div>
                                       <div class="panel-footer">
  											<?php if(!$order->aggreement_signed && !$order->work_started && !$order->order_closed){?>
