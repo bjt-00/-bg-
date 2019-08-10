@@ -10,8 +10,8 @@
    class OrderBackingBean{
    	// = "index.php?action=home";
    	  function validate(){
-	   	  		$fromDate = $_POST['fromYear'].'-'.$_POST['fromMonth'].'-'.$_POST['fromDay'];
-	   	  		$toDate = $_POST['toYear'].'-'.$_POST['toMonth'].'-'.$_POST['toDay'];
+   	            $fromDate =$_POST['fromDate']; //$_POST['fromYear'].'-'.$_POST['fromMonth'].'-'.$_POST['fromDay'];
+   	            $toDate = $_POST['toDate'];//$_POST['toYear'].'-'.$_POST['toMonth'].'-'.$_POST['toDay'];
 	   	  		global  $action;
 	   	  		//validate
 	   	  		$validator="<ul>";

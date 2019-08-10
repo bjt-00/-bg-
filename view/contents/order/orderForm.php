@@ -38,7 +38,9 @@
       <label for="technology">Technology *:</label>
 							<select name="technology" class="form-control">
 								<option value="Java">Java</option>
+								<option value="Java">JEE</option>
 								<option value="PHP">PHP</option>
+								<option value="HTML">HTML</option>
 								<option value="Database">Database</option>
 								<option value="Multimedia/Adobe">Multimedia/Adobe</option>
 								<option value="Optional">Optional</option>
@@ -51,55 +53,14 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="form-group">
-      <label for="fromDay">From Date *:</label>
-							<select name="fromDay" class="form-control" title="Project Start Date" >
-								<?php 
-									for($day=1;$day<=31;$day++){
-								?>
-								<option value="<?php echo ($day<10?'0'.$day:$day); ?>"><?php echo ($day<10?'0'.$day:$day); ?></option>
-								<?php }?>
-							</select>
-							<select name="fromMonth">
-								<?php 
-									for($month=date("m")-1+1;$month<=12;$month++){
-								?>
-								<option value="<?php echo ($month<10?'0'.$month:$month); ?>"><?php echo ($month<10?'0'.$month:$month); ?></option>
-								<?php }?>
-							</select>
-							
-							<select name="fromYear">
-								<?php 
-									for($year=date("Y");$year<=date("Y")+5;$year++){
-								?>
-								<option value="<?php echo $year; ?>"><?php echo $year; ?></option>
-								<?php }?>
-							</select>
+      <label for="fromDate">From Date *:</label>
+       <input type="date" name="fromDate" value="<?php echo date('Y-m').'-'.(date('d')+3); ?>" min="<?php echo date('Y-m').'-'.(date('d')+3); ?>" class="form-control">
    </div>
 </div>
 	<div class="col-lg-6">
 	    <div class="form-group">
-	      <label for="toDay">To Date *:</label>
-								<select name="toDay" class="form-control">
-									<?php 
-										for($day=1;$day<=31;$day++){
-									?>
-									<option value="<?php echo ($day<10?'0'.$day:$day); ?>"><?php echo ($day<10?'0'.$day:$day); ?></option>
-									<?php }?>
-								</select>
-								<select name="toMonth">
-									<?php 
-										for($month=date("m")-1+1;$month<=12;$month++){
-									?>
-									<option value="<?php echo ($month<10?'0'.$month:$month); ?>"><?php echo ($month<10?'0'.$month:$month); ?></option>
-																	<?php }?>
-								</select>
-								<select name="toYear">
-									<?php 
-										for($year=date("Y");$year<=date("Y")+5;$year++){
-									?>
-									<option value="<?php echo $year; ?>"><?php echo $year; ?></option>
-									<?php }?>
-								</select>
+	      <label for="toDate">To Date *:</label>
+	      <input type="date" name="toDate" value="<?php echo date('Y-m').'-'.(date('d')+15); ?>" min="<?php echo date('Y-m').'-'.(date('d')+15); ?>" class="form-control">
 		</div>
 	</div>
 </div>
@@ -110,6 +71,7 @@
       <input name="budget" type="number" value="<?php echo $budget;?>" min="10" step="10" required class="form-control">
       <select name="currency">
 		<option value="USD">$</option>
+		<option value="PKR">PKR</option>
 	 </select>
     </div>
 	</div>
